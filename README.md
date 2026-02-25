@@ -1,5 +1,7 @@
 # Gazco Electric Fireplace ESPHome Controller
 
+[![GitHub release](https://img.shields.io/github/release/richardctrimble/esph-gazco-electric.svg)](https://github.com/richardctrimble/esph-gazco-electric/releases/)
+
 ESP32/ESPHome implementation for controlling a Gazco electric fireplace via 433MHz OOK radio, replacing the original remote control.
 
 ## Hardware
@@ -134,7 +136,7 @@ The Unit ID identifies your fireplace's remote. To learn it:
 
 The default is `0FD0`. The value persists across reboots.
 
-## Usage
+## Setup
 
 1. Flash `minibuddy-gazco.yaml` to TTGO LoRa32 v2.1
 2. Set desired fire settings using the select/switch controls
@@ -145,6 +147,10 @@ The default is `0FD0`. The value persists across reboots.
 - This system controls heating equipment — test thoroughly before unsupervised use
 - Keep original remote as backup
 - Comply with local RF transmission regulations (433 MHz ISM band)
+
+## Licence
+
+Released under the [MIT Licence](LICENSE).
 
 ## References
 
