@@ -598,11 +598,15 @@ remote_receiver:
 
           // ---- Update timestamp ----
           auto time = id(sntp_time).now();
-          if (time.is_valid()) {
-            id(last_packet_received).publish_state(time.strftime("%H:%M:%S"));
-          } else {
-            id(last_packet_received).publish_state("--:--:--");
-          }
++         if (time.is_valid()) {
++           char buf[32];
++           snprintf(buf, sizeof(buf), "%04d-%02d-%02dT%02d:%02d:%02dZ",
++                    time.year, time.month, time.day_of_month,
++                    time.hour, time.minute, time.second);
++           id(last_packet_received).publish_state(buf);
++         } else {
++           id(last_packet_received).publish_state("--:--:--");
++         }
 
 # ================================================================================
 # TRANSMITTER — Half-duplex on GPIO32 (shared with receiver)
